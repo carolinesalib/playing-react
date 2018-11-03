@@ -1,0 +1,20 @@
+.Field {
+  text-align: center;
+}
+
+.Field-form {
+  flex-direction: column;
+  display: flex;
+  width: 100px;
+  text-align: center;
+}
+
+.Field-input {
+  width: 100px;
+  margin: 0 auto;
+  height: 60px;
+  font-size: 20px;
+  color: gray;
+  font-weight: bold;
+  text-align: center;
+}
