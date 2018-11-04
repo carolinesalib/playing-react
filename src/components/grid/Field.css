@@ -24,3 +24,10 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+input:focus {
+  outline-color: grey;
+  outline-style: auto;
+  outline-width: 5px;
+  z-index: 999;
+}
