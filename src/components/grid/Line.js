@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Line.css';
 import Field from './Field';
 
-const Line = ( props ) => {
-  return (
-    <div className="Line">
-      <Field value={props.data.countIn} onChange={props.change} onBlur={props.blur} ></Field>
-      <Field value={props.data.add}></Field>
-      <Field value={props.data.totalIn}></Field>
-      <Field value={props.data.comp}></Field>
-      <Field value={props.data.countOut}></Field>
-      <Field value={props.data.totalSold}></Field>
-    </div>
-  );
+class Line extends Component {
+  constructor(props){
+    super(props);
+    this.state = this.props.data
+  }
+
+  render() {
+    return (
+      <div className="Line">
+        <Field value={this.state.countIn} blur={this.blurHandler} change={this.countInChangeHandler}></Field>
+        <Field value={this.state.add} blur={this.blurHandler} change={this.addChangeHandler} color='#39E2A9'></Field>
+        <Field value={this.state.totalIn} color='#00C7FB'></Field>
+        <Field value={this.state.comp} color='#FF6243'></Field>
+        <Field value={this.state.countOut}></Field>
+        <Field value={this.state.totalSold} color='#00C7FB'></Field>
+      </div>
+    );
+  }
+
+  countInChangeHandler = (e) => {
+    this.setState({countIn: e.target.value})
+  }
+
+  addChangeHandler = (e) => {
+    this.setState({add: e.target.value})
+  }
+
+  blurHandler = () => {
+    this.setState({totalIn: parseInt(this.state.countIn) + parseInt(this.state.add)})
+  }
 }
 
 export default Line;

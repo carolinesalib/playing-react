@@ -14,6 +14,8 @@ const Field = ( props ) => {
           type="number"
           onChange={props.change}
           value={props.value}
+          style={{ color: props.color || 'grey' }}
+          readOnly={props.change ? false : true}
         />
       </form>
     </div>
