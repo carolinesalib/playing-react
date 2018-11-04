@@ -11,6 +11,7 @@ const Field = ( props ) => {
         <input
           className="Field-input"
           type="text"
+          type="number"
           onChange={props.change}
           value={props.value}
         />
