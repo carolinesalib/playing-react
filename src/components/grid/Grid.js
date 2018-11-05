@@ -13,7 +13,7 @@ class Grid extends Component {
         { label: 'Default', price: 10, countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0, totalPrice: 0 },
         { label: 'Other size', price: 10, countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0, totalPrice: 0 },
       ],
-      totals: { totalIn: 0, comp: 0, countOut: 0, totalSold: 0 }
+      totals: { totalIn: 0, comp: 0, countOut: 0, totalSold: 0, totalPrice: 0 }
     };
   }
 
@@ -31,6 +31,8 @@ class Grid extends Component {
 
   updateLineData = (index, data) => {
     var totalIn = parseInt(data.countIn) + parseInt(data.add)
+    var totalSold = totalIn - parseInt(data.comp) - parseInt(data.countOut)
+    var totalPrice = totalSold * data.price
 
     var updatedLines = update(
       this.state.lines, {
@@ -41,7 +43,8 @@ class Grid extends Component {
             totalIn: totalIn,
             comp: data.comp,
             countOut: data.countOut,
-            totalSold: parseInt(data.totalIn) - parseInt(data.comp) - parseInt(data.countOut)
+            totalSold: totalSold,
+            totalPrice: totalPrice
           }
         }
       }
@@ -59,15 +62,17 @@ class Grid extends Component {
     var comp = 0
     var countOut = 0
     var totalSold = 0
+    var totalPrice = 0
 
     lines.map(line => {
       totalIn += parseInt(line.totalIn)
       comp += parseInt(line.comp)
       countOut += parseInt(line.countOut)
       totalSold += parseInt(line.totalSold)
+      totalPrice += parseInt(line.totalPrice)
     })
 
-    this.setState({totals: { totalIn: totalIn, comp: comp, countOut: countOut, totalSold: totalSold }})
+    this.setState({totals: { totalIn: totalIn, comp: comp, countOut: countOut, totalSold: totalSold, totalPrice: totalPrice }})
   }
 }
 

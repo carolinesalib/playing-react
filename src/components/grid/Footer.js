@@ -12,6 +12,7 @@ const Footer = ( props ) => {
       <div className="Footer-default"><p style={{ color: '#FF6243' }}>{props.totals.comp}</p></div>
       <div className="Footer-default"><p>{props.totals.countOut}</p></div>
       <div className="Footer-default"><p style={{ color: '#00C7FB' }}>{props.totals.totalSold}</p></div>
+      <div className="Footer-big"><p style={{ color: '#00C7FB' }}>{'$'+props.totals.totalPrice}</p></div>
     </div>
   );
 }

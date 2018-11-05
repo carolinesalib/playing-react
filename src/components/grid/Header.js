@@ -13,6 +13,7 @@ class Header extends Component {
         <div className="Header-default"><p>Comp</p></div>
         <div className="Header-default"><p>Count Out</p></div>
         <div className="Header-default"><p>Total Sold</p></div>
+        <div className="Header-big"><p>Gross</p></div>
       </div>
     );
   }
