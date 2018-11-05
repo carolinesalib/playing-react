@@ -56,12 +56,18 @@ class Grid extends Component {
 
   setTotals = (lines) => {
     var totalIn = 0
+    var comp = 0
+    var countOut = 0
+    var totalSold = 0
 
     lines.map(line => {
       totalIn += parseInt(line.totalIn)
+      comp += parseInt(line.comp)
+      countOut += parseInt(line.countOut)
+      totalSold += parseInt(line.totalSold)
     })
 
-    this.setState({totals: { totalIn: totalIn, comp: 0, countOut: 0, totalSold: 0 }})
+    this.setState({totals: { totalIn: totalIn, comp: comp, countOut: countOut, totalSold: totalSold }})
   }
 }
 
