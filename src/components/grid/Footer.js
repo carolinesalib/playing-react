@@ -4,6 +4,7 @@ import './Footer.css';
 const Footer = ( props ) => {
   return (
     <div className="Footer">
+      <div className="Footer-label"><p></p></div>
       <div className="Footer-text"><p></p></div>
       <div className="Footer-text"><p></p></div>
       <div className="Footer-text"><p style={{ color: '#00C7FB' }}>{props.totals.totalIn}</p></div>

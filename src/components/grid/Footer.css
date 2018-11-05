@@ -3,6 +3,10 @@
   flex-direction: row;
 }
 
+.Footer-label {
+  width: 160px;
+}
+
 .Footer-text {
   height: 72px;
   width: 100px;

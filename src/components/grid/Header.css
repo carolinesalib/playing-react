@@ -9,6 +9,12 @@
   display: flex;
 }
 
+.Header-label {
+  height: 72px;
+  display: flex;
+  width: 160px;
+}
+
 p {
   width: 100%;
   align-self: flex-end;

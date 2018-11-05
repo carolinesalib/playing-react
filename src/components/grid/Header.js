@@ -5,6 +5,7 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
+        <div className="Header-label"><p></p></div>
         <div className="Header-title"><p>Count In</p></div>
         <div className="Header-title"><p>Add</p></div>
         <div className="Header-title"><p>Total In</p></div>

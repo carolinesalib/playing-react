@@ -10,8 +10,8 @@ class Grid extends Component {
 
     this.state = {
       lines: [
-        { countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0 },
-        { countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0 },
+        { label: 'Default', countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0 },
+        { label: 'Other size', countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0 },
       ],
       totals: { totalIn: 0, comp: 0, countOut: 0, totalSold: 0 }
     };
@@ -22,7 +22,7 @@ class Grid extends Component {
       <div className="Grid">
         <Header />
         {this.state.lines.map((line, index) => {
-          return <Line data={line} updateLineData={this.updateLineData} key={index} id={index} />
+          return <Line data={line} updateLineData={this.updateLineData} key={index} id={index} showLabel={this.state.lines.length > 1} />
         })}
         <Footer totals={this.state.totals} />
       </div>

@@ -2,3 +2,10 @@
   display: flex;
   flex-direction: row;
 }
+
+.Line-label {
+  font-size: 18px;
+  color: #BEBEC1;
+  text-align: right;
+  margin: auto;
+}

@@ -11,6 +11,7 @@ class Line extends Component {
   render() {
     return (
       <div className="Line" onBlur={this.blurHandler}>
+        <p className="Line-label">{this.props.showLabel ? this.state.label : null}</p>
         <Field value={this.state.countIn} change={this.countInChangeHandler}></Field>
         <Field value={this.state.add} change={this.addChangeHandler} color='#39E2A9'></Field>
         <Field value={this.state.totalIn} color='#00C7FB'></Field>
