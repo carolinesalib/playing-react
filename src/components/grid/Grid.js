@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Footer from './Footer';
 import Line from './Line';
+import update from 'immutability-helper';
 
 class Grid extends Component {
   constructor(props) {
@@ -8,8 +10,10 @@ class Grid extends Component {
 
     this.state = {
       lines: [
-        { countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0 }
-      ]
+        { countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0 },
+        { countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0 },
+      ],
+      totals: { totalIn: 0, comp: 0, countOut: 0, totalSold: 0 }
     };
   }
 
@@ -18,10 +22,46 @@ class Grid extends Component {
       <div className="Grid">
         <Header />
         {this.state.lines.map((line, index) => {
-          return <Line data={line} onBlur={() => this.handleBlur(index)} key={index} />
+          return <Line data={line} updateLineData={this.updateLineData} key={index} id={index} />
         })}
+        <Footer totals={this.state.totals} />
       </div>
     );
+  }
+
+  updateLineData = (index, data) => {
+    var totalIn = parseInt(data.countIn) + parseInt(data.add)
+
+    var updatedLines = update(
+      this.state.lines, {
+        [index]: {
+          $set: {
+            countIn: data.countIn,
+            add: data.add,
+            totalIn: totalIn,
+            comp: data.comp,
+            countOut: data.countOut,
+            totalSold: data.totalSold
+          }
+        }
+      }
+    )
+
+    this.setState({
+      lines: updatedLines
+    })
+
+    this.setTotals(updatedLines)
+  }
+
+  setTotals = (lines) => {
+    var totalIn = 0
+
+    lines.map(line => {
+      totalIn += parseInt(line.totalIn)
+    })
+
+    this.setState({totals: { totalIn: totalIn, comp: 0, countOut: 0, totalSold: 0 }})
   }
 }
 

@@ -10,7 +10,7 @@ class Line extends Component {
 
   render() {
     return (
-      <div className="Line">
+      <div className="Line" onBlur={this.blurHandler}>
         <Field value={this.state.countIn} blur={this.blurHandler} change={this.countInChangeHandler}></Field>
         <Field value={this.state.add} blur={this.blurHandler} change={this.addChangeHandler} color='#39E2A9'></Field>
         <Field value={this.state.totalIn} color='#00C7FB'></Field>
@@ -31,6 +31,8 @@ class Line extends Component {
 
   blurHandler = () => {
     this.setState({totalIn: parseInt(this.state.countIn) + parseInt(this.state.add)})
+
+    this.props.updateLineData(this.props.id, this.state);
   }
 }
 
