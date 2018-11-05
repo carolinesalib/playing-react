@@ -41,7 +41,7 @@ class Grid extends Component {
             totalIn: totalIn,
             comp: data.comp,
             countOut: data.countOut,
-            totalSold: data.totalSold
+            totalSold: parseInt(data.totalIn) - parseInt(data.comp) - parseInt(data.countOut)
           }
         }
       }

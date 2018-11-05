@@ -14,8 +14,8 @@ class Line extends Component {
         <Field value={this.state.countIn} blur={this.blurHandler} change={this.countInChangeHandler}></Field>
         <Field value={this.state.add} blur={this.blurHandler} change={this.addChangeHandler} color='#39E2A9'></Field>
         <Field value={this.state.totalIn} color='#00C7FB'></Field>
-        <Field value={this.state.comp} color='#FF6243'></Field>
-        <Field value={this.state.countOut}></Field>
+        <Field value={this.state.comp} change={this.compChangeHandler} color='#FF6243'></Field>
+        <Field value={this.state.countOut} change={this.countOutChangeHandler}></Field>
         <Field value={this.state.totalSold} color='#00C7FB'></Field>
       </div>
     );
@@ -29,8 +29,17 @@ class Line extends Component {
     this.setState({add: e.target.value})
   }
 
+  compChangeHandler = (e) => {
+    this.setState({comp: e.target.value})
+  }
+
+  countOutChangeHandler = (e) => {
+    this.setState({countOut: e.target.value})
+  }
+
   blurHandler = () => {
     this.setState({totalIn: parseInt(this.state.countIn) + parseInt(this.state.add)})
+    this.setState({totalSold: parseInt(this.state.totalIn) - parseInt(this.state.comp) - parseInt(this.state.countOut)})
 
     this.props.updateLineData(this.props.id, this.state);
   }
