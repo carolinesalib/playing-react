@@ -12,7 +12,7 @@ class Line extends Component {
     return (
       <div className="Line" onBlur={this.blurHandler}>
         <div className="Line-label"><p>{this.props.showLabel ? this.state.label : null}</p></div>
-        <Field value={this.state.price} prefix={'$'} width={'140px'} />
+        <Field value={this.state.price} prefix={'$'} width={'140px'} color='#00C7FB' />
         <Field value={this.state.countIn} change={this.countInChangeHandler}></Field>
         <Field value={this.state.add} change={this.addChangeHandler} color='#39E2A9'></Field>
         <Field value={this.state.totalIn} color='#00C7FB'></Field>
