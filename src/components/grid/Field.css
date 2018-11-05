@@ -1,8 +1,4 @@
 .Field {
-  text-align: center;
-}
-
-.Field-form {
   flex-direction: column;
   display: flex;
   width: 100px;
@@ -14,9 +10,9 @@
   margin: 0 auto;
   height: 60px;
   font-size: 26px;
-  color: gray;
   font-weight: bold;
   text-align: center;
+  border: #BEBEC1 solid 1px;
 }
 
 input::-webkit-outer-spin-button,
@@ -26,7 +22,7 @@ input::-webkit-inner-spin-button {
 }
 
 input:focus {
-  outline-color: grey;
+  outline-color: #BEBEC1;
   outline-style: auto;
   outline-width: 5px;
   z-index: 999;
