@@ -5,13 +5,14 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <div className="Header-label"><p></p></div>
-        <div className="Header-title"><p>Count In</p></div>
-        <div className="Header-title"><p>Add</p></div>
-        <div className="Header-title"><p>Total In</p></div>
-        <div className="Header-title"><p>Comp</p></div>
-        <div className="Header-title"><p>Count Out</p></div>
-        <div className="Header-title"><p>Total Sold</p></div>
+        <div className="Header-big"><p></p></div>
+        <div className="Header-big"><p>Price</p></div>
+        <div className="Header-default"><p>Count In</p></div>
+        <div className="Header-default"><p>Add</p></div>
+        <div className="Header-default"><p>Total In</p></div>
+        <div className="Header-default"><p>Comp</p></div>
+        <div className="Header-default"><p>Count Out</p></div>
+        <div className="Header-default"><p>Total Sold</p></div>
       </div>
     );
   }

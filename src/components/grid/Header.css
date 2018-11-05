@@ -3,25 +3,24 @@
   flex-direction: row;
 }
 
-.Header-title {
+.Header-default {
   height: 72px;
   width: 100px;
   display: flex;
+  border: white solid 1px;
 }
 
-.Header-label {
+.Header-big {
   height: 72px;
   display: flex;
-  width: 160px;
+  width: 140px;
+  border: white solid 1px;
 }
 
-p {
+.Header p {
   width: 100%;
   align-self: flex-end;
   margin-bottom: 10px;
-}
-
-p {
   font-size: 18px;
   font-weight: bold;
   color: gray;

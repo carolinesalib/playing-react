@@ -10,8 +10,8 @@ class Grid extends Component {
 
     this.state = {
       lines: [
-        { label: 'Default', countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0 },
-        { label: 'Other size', countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0 },
+        { label: 'Default', price: 10, countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0, totalPrice: 0 },
+        { label: 'Other size', price: 10, countIn: 0, add: 0, totalIn: 0, comp: 0, countOut: 0, totalSold: 0, totalPrice: 0 },
       ],
       totals: { totalIn: 0, comp: 0, countOut: 0, totalSold: 0 }
     };

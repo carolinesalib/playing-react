@@ -1,5 +1,6 @@
 import React from 'react';
 import './Field.css';
+import CurrencyFormat from 'react-currency-format';
 
 const Field = ( props ) => {
   return (
@@ -7,14 +8,17 @@ const Field = ( props ) => {
       <div className="Field-header">
         <span className="Field-title"></span>
       </div>
-      <input
+      <CurrencyFormat
         className="Field-input"
         type="text"
-        type="number"
         onChange={props.change}
         value={props.value}
-        style={{ color: props.color || '#BEBEC1' }}
+        prefix={props.prefix}
         readOnly={props.change ? false : true}
+        style={{
+          color: props.color || '#BEBEC1',
+          width: props.width || '100px'
+        }}
       />
     </div>
   );

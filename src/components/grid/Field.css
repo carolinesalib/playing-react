@@ -1,13 +1,12 @@
 .Field {
   flex-direction: column;
   display: flex;
-  width: 100px;
   text-align: center;
 }
 
 .Field-input {
-  width: 100px;
   margin: 0 auto;
+  padding: 0;
   height: 60px;
   font-size: 26px;
   font-weight: bold;

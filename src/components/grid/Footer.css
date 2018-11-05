@@ -3,20 +3,16 @@
   flex-direction: row;
 }
 
-.Footer-label {
-  width: 160px;
+.Footer-big {
+  width: 140px;
+  border: white solid 1px;
 }
 
-.Footer-text {
+.Footer-default {
   height: 72px;
   width: 100px;
   display: flex;
-}
-
-p {
-  width: 100%;
-  align-self: flex-end;
-  margin-bottom: 10px;
+  border: white solid 1px;
 }
 
 .Footer p {
@@ -25,4 +21,8 @@ p {
   color: #BEBEC1;
   text-align: center;
   padding: 0 20px;
+  width: 100%;
+  align-self: flex-end;
+  margin-bottom: 10px;
+  width: 100%;
 }
